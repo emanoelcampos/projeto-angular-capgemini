@@ -1,3 +1,4 @@
+import { IProduto, produtos } from './../produtos';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent implements OnInit {
+
+  produtos: IProduto[] = produtos;
 
   constructor() { }
 
