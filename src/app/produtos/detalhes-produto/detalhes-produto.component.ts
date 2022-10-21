@@ -19,7 +19,7 @@ export class DetalhesProdutoComponent implements OnInit {
   constructor(
     private produtosService: ProdutosService,
     private route: ActivatedRoute,
-    private notificacao: NotificacaoService
+    private notificacaoService: NotificacaoService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class DetalhesProdutoComponent implements OnInit {
   }
 
   adicionarAoCarrinho() {
-
+    this.notificacaoService.notificar('O produto foi adicionado ao carrinho')
   }
 
 }
