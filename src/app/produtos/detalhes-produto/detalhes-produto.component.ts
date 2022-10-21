@@ -1,10 +1,10 @@
 import { ActivatedRoute } from '@angular/router';
-import { IProduto, IProdutoCarrinho } from './../../produtos';
 import { Component, OnInit } from '@angular/core';
 
 import { ProdutosService } from 'src/app/produtos.service';
 import { NotificacaoService } from './../../notificacao.service';
 import { CarrinhoService } from './../../carrinho.service';
+import { IProduto, IProdutoCarrinho } from './../../produtos';
 
 
 @Component({
@@ -25,9 +25,10 @@ export class DetalhesProdutoComponent implements OnInit {
     private carrinhoService: CarrinhoService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
-    const produtoId = Number(routeParams.get("id"));
+    const produtoId = Number(routeParams.get('id'));
+    console.log(produtoId)
     this.produto = this.produtosService.getOne(produtoId);
   }
 
