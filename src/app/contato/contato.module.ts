@@ -16,4 +16,4 @@ import { ContatoComponent } from './contato.component';
     ReactiveFormsModule
   ]
 })
-export class ContatosModule { }
+export class ContatoModule { }
