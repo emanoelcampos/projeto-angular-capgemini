@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
+import { BarraPesquisaComponent } from './barra-pesquisa/barra-pesquisa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NaoEncontradoComponent
+    NaoEncontradoComponent,
+    BarraPesquisaComponent
   ],
   imports: [
     BrowserModule,
