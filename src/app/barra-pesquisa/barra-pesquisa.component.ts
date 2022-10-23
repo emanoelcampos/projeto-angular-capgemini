@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BarraPesquisaComponent implements OnInit {
 
-  constructor() { }
+  descricao = '';
+
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  pesquisar() {
+    if (this.descricao) {
+      this.router.navigate(['produtos'], {queryParams:{ descricao: this.descricao }})
+      return;
+    }
+    this.router.navigate(['produtos']);
   }
 
 }
