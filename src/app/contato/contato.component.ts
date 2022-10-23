@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-contato',
@@ -9,27 +11,27 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class ContatoComponent implements OnInit {
 
   formContato = this.formBuilder.group({
-    nome: ['', [
-      Validators.minLength(4),
-      Validators.required
-    ]],
-    assunto: ['', [
-      Validators.minLength(10),
-      Validators.required
-    ]],
-    telefone: ['', [
-      Validators.minLength(11),
-      Validators.required
-    ]],
-    email: ['', [
-      Validators.email,
-      Validators.required
-    ]],
-    mensagem: ['', [
-      Validators.minLength(20),
-      Validators.required
-    ]]
-  });
+      nome: ['', [
+        Validators.minLength(4),
+        Validators.required
+      ]],
+      assunto: ['', [
+        Validators.minLength(10),
+        Validators.required
+      ]],
+      telefone: ['', [
+        Validators.minLength(11),
+        Validators.required
+      ]],
+      email: ['', [
+        Validators.email,
+        Validators.required
+      ]],
+      mensagem: ['', [
+        Validators.minLength(20),
+        Validators.required
+      ]]
+    });
 
   constructor(
     private formBuilder: FormBuilder
@@ -38,4 +40,8 @@ export class ContatoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  enviarFormulario() {
+    alert('A mensagem foi enviada');
+    this.formContato.reset();
+  }
 }
